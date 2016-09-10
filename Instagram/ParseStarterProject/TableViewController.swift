@@ -17,10 +17,22 @@ class TableViewController: UITableViewController {
     var userids = [""]
     
     var isFollowing = ["": false]
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+    
+    var refresher: UIRefreshControl!
+    
+    @IBAction func signOut(sender: AnyObject) {
+        
+        
+        PFUser.logOut()
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+        
+    }
+    
+    
+    // 更新
+    
+    func refresh() {
         
         var query = PFUser.query()
         
@@ -38,16 +50,14 @@ class TableViewController: UITableViewController {
                     
                     if let user = object as? PFUser {
                         
-                        if user.objectId != PFUser.currentUser()?.objectId {
-                        
+                        if user.objectId! != PFUser.currentUser()?.objectId {
+                            
                             self.usernames.append(user.username!)
-                        
                             self.userids.append(user.objectId!)
                             
                             var query = PFQuery(className: "followers")
                             
-                            query.whereKey("follower", equalTo: (PFUser.currentUser()?.objectId)!)
-                            
+                            query.whereKey("follower", equalTo: PFUser.currentUser()!.objectId!)
                             query.whereKey("following", equalTo: user.objectId!)
                             
                             query.findObjectsInBackgroundWithBlock({ (objects, error) in
@@ -70,6 +80,8 @@ class TableViewController: UITableViewController {
                                     
                                     self.tableView.reloadData()
                                     
+                                    self.refresher.endRefreshing()
+                                    
                                 }
                                 
                                 
@@ -87,6 +99,23 @@ class TableViewController: UITableViewController {
             }
             
         })
+        
+    }
+    
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        refresher = UIRefreshControl()
+        
+        refresher.attributedTitle = NSAttributedString(string: "updating..")
+        
+        refresher.addTarget(self, action: "refresh", forControlEvents: UIControlEvents.ValueChanged)
+        
+        self.tableView.addSubview(refresher)
+        
+        refresh()
         
     }
 
@@ -140,9 +169,9 @@ class TableViewController: UITableViewController {
         
             var following = PFObject(className: "followers")
             
-            following[followedObjId] = userids[indexPath.row]
+            following["following"] = userids[indexPath.row]
         
-            following[followedObjId] = PFUser.currentUser()?.objectId
+            following["follower"] = PFUser.currentUser()?.objectId
         
             following.saveInBackground()
             

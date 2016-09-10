@@ -26,6 +26,8 @@ class ViewController: UIViewController {
     
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     
+    // 提示
+    
     func displayAlert(title: String, message: String) {
         
         var alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
@@ -158,19 +160,9 @@ class ViewController: UIViewController {
         
     }
     
-    
-    
-    
 
     
     
-    
-    
-    
-    
-    
-
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -178,7 +170,7 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         
-        if PFUser.currentUser() != nil {
+        if PFUser.currentUser()?.username != nil {
             
             self.performSegueWithIdentifier("signin", sender: self)
             

@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		2D7CFFBA1D052CB600B31FB6 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D7CFFB91D052CB600B31FB6 /* Launch Screen.storyboard */; };
 		2D9598F61D05990D001F3CFE /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9598F51D05990D001F3CFE /* TableViewController.swift */; };
+		2DE7C2741D06AFC900DD1062 /* user-image-with-black-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DE7C2731D06AFC900DD1062 /* user-image-with-black-background.png */; };
+		2DE7C2761D06C26900DD1062 /* PostImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE7C2751D06C26900DD1062 /* PostImageViewController.swift */; };
+		2DE7C2781D07189A00DD1062 /* cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE7C2771D07189A00DD1062 /* cell.swift */; };
+		2DE7C27A1D071A0E00DD1062 /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE7C2791D071A0E00DD1062 /* FeedTableViewController.swift */; };
 		814C3ACA1B69877600E307BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 814C3AC61B69877600E307BB /* Main.storyboard */; };
 		814C3ACB1B69877600E307BB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 814C3AC81B69877600E307BB /* Images.xcassets */; };
 		81BA814B1A49DA1800E65899 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BA814A1A49DA1800E65899 /* AppDelegate.swift */; };
@@ -24,6 +28,10 @@
 /* Begin PBXFileReference section */
 		2D7CFFB91D052CB600B31FB6 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = "Launch Screen.storyboard"; path = "../Launch Screen.storyboard"; sourceTree = "<group>"; };
 		2D9598F51D05990D001F3CFE /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		2DE7C2731D06AFC900DD1062 /* user-image-with-black-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "user-image-with-black-background.png"; path = "../../../user-image-with-black-background.png"; sourceTree = "<group>"; };
+		2DE7C2751D06C26900DD1062 /* PostImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostImageViewController.swift; sourceTree = SOURCE_ROOT; };
+		2DE7C2771D07189A00DD1062 /* cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cell.swift; sourceTree = "<group>"; };
+		2DE7C2791D071A0E00DD1062 /* FeedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
 		814C3AC71B69877600E307BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		814C3AC81B69877600E307BB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		814C3AC91B69877600E307BB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -90,7 +98,11 @@
 				81BA814A1A49DA1800E65899 /* AppDelegate.swift */,
 				81BA814C1A49DA1800E65899 /* ViewController.swift */,
 				2D9598F51D05990D001F3CFE /* TableViewController.swift */,
+				2DE7C2731D06AFC900DD1062 /* user-image-with-black-background.png */,
 				814C3AC61B69877600E307BB /* Main.storyboard */,
+				2DE7C2791D071A0E00DD1062 /* FeedTableViewController.swift */,
+				2DE7C2771D07189A00DD1062 /* cell.swift */,
+				2DE7C2751D06C26900DD1062 /* PostImageViewController.swift */,
 				2D7CFFB91D052CB600B31FB6 /* Launch Screen.storyboard */,
 			);
 			path = ParseStarterProject;
@@ -179,6 +191,7 @@
 			files = (
 				2D7CFFBA1D052CB600B31FB6 /* Launch Screen.storyboard in Resources */,
 				814C3ACA1B69877600E307BB /* Main.storyboard in Resources */,
+				2DE7C2741D06AFC900DD1062 /* user-image-with-black-background.png in Resources */,
 				814C3ACB1B69877600E307BB /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -190,8 +203,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DE7C2761D06C26900DD1062 /* PostImageViewController.swift in Sources */,
+				2DE7C27A1D071A0E00DD1062 /* FeedTableViewController.swift in Sources */,
 				81BA814D1A49DA1800E65899 /* ViewController.swift in Sources */,
 				2D9598F61D05990D001F3CFE /* TableViewController.swift in Sources */,
+				2DE7C2781D07189A00DD1062 /* cell.swift in Sources */,
 				81BA814B1A49DA1800E65899 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
